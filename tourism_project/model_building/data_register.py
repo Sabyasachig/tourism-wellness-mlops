@@ -2,7 +2,7 @@
 Creates a Hugging Face dataset repository and uploads tourism.csv to it.
 Triggered as the first job in the GitHub Actions CI/CD pipeline.
 """
-from huggingface_hub.utils import RepositoryNotFoundError, HfHubHTTPError
+from huggingface_hub.utils import RepositoryNotFoundError
 from huggingface_hub import HfApi, create_repo
 import os
 
