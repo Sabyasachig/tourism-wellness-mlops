@@ -36,3 +36,6 @@ Learner_Template_Notebook_AML_and_MLOps_Project.ipynb
 mlflow.db
 mlruns/
 mlartifacts/
+
+# ── Temporary cloned repo (created by notebook push-to-GitHub cell) ──────────
+tourism-wellness-mlops/
