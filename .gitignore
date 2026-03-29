@@ -1,0 +1,29 @@
+# ── Processed data / model binaries (not needed in GitHub) ──────────────────
+tourism_project/data/X_train.csv
+tourism_project/data/X_test.csv
+tourism_project/data/y_train.csv
+tourism_project/data/y_test.csv
+tourism_project/data/preprocessor.joblib
+tourism_project/model_building/*.joblib
+
+# ── MLflow run artefacts ─────────────────────────────────────────────────────
+mlruns/
+
+# ── Python cache ─────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+.Python
+*.egg-info/
+dist/
+build/
+
+# ── Jupyter checkpoints ───────────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── macOS metadata ───────────────────────────────────────────────────────────
+.DS_Store
+
+# ── Environment files ─────────────────────────────────────────────────────────
+.env
+*.env
