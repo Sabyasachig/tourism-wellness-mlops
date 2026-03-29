@@ -31,3 +31,7 @@ Learner_Template_Notebook_AML_and_MLOps_Project.ipynb
 # ── Environment files ─────────────────────────────────────────────────────────
 .env
 *.env
+
+# ── Local MLflow artifacts ────────────────────────────────────────────────────
+mlflow.db
+mlruns/

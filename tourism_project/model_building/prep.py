@@ -12,11 +12,12 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
 import joblib
 from huggingface_hub import hf_hub_download, HfApi
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
-HF_USERNAME   = os.getenv("HF_USERNAME", "<YOUR_HF_USERNAME>")
+HF_USERNAME   = os.getenv("HF_USERNAME", "sabyasachighosh")
 DATASET_REPO  = f"{HF_USERNAME}/tourism-wellness-data"
 HF_TOKEN      = os.getenv("HF_TOKEN")
 RANDOM_STATE  = 42
