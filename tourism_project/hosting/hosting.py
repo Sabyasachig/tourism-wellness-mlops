@@ -1,6 +1,6 @@
 """hosting.py
 Uploads the deployment folder (Dockerfile, app.py, requirements.txt) to a
-Hugging Face Space running Streamlit (docker SDK).
+Hugging Face Space running the app via Docker SDK.
 Triggered as the fourth job (deploy) in the GitHub Actions pipeline.
 """
 from huggingface_hub import HfApi, create_repo
@@ -14,8 +14,7 @@ HF_TOKEN    = os.getenv("HF_TOKEN")
 
 api = HfApi(token=HF_TOKEN)
 
-# ── DELETE SPACE IF IT EXISTS ─────────────────────────────────────────────────
-# Avoids repo_info (which returns 400 on broken/transitional spaces).
+# ── DELETE SPACE IF IT EXISTS (avoids 400 from repo_info on broken spaces) ────
 # Always attempt delete; ignore all errors (space may not exist yet).
 try:
     api.delete_repo(repo_id=SPACE_REPO, repo_type="space")
@@ -43,7 +42,3 @@ api.upload_folder(
 )
 print(f"\nDeployment files uploaded to Space: {SPACE_REPO}")
 print(f"App will be live at: https://huggingface.co/spaces/{SPACE_REPO}")
-
-print(f"App will be live at: https://huggingface.co/spaces/{SPACE_REPO}")
-
-print(f"Your app will be live at: https://huggingface.co/spaces/{SPACE_REPO}")
