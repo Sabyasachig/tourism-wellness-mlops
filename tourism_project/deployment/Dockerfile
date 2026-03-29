@@ -10,7 +10,7 @@ COPY . .
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose the Streamlit default port (HF Spaces uses 7860)
+# Expose the Streamlit default port
 EXPOSE 7860
 
 # Run the Streamlit app

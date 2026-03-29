@@ -7,7 +7,7 @@ from huggingface_hub import HfApi, create_repo
 import os
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
-HF_USERNAME = os.getenv("HF_USERNAME", "<YOUR_HF_USERNAME>")
+HF_USERNAME = os.getenv("HF_USERNAME", "sabyasachighosh")
 DATASET_REPO_ID = f"{HF_USERNAME}/tourism-wellness-data"
 REPO_TYPE = "dataset"
 DATA_FILE = "tourism_project/data/tourism.csv"

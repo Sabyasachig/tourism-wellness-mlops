@@ -3,12 +3,13 @@ Deployed on Hugging Face Spaces.
 """
 import streamlit as st
 import pandas as pd
+import numpy as np
 import joblib
 import os
 from huggingface_hub import hf_hub_download
 
 # ── CONFIGURATION ─────────────────────────────────────────────────────────────
-HF_USERNAME   = os.getenv("HF_USERNAME", "<YOUR_HF_USERNAME>")
+HF_USERNAME   = os.getenv("HF_USERNAME", "sabyasachighosh")
 MODEL_REPO    = f"{HF_USERNAME}/tourism-wellness-model"
 DATASET_REPO  = f"{HF_USERNAME}/tourism-wellness-data"
 MODEL_FNAME   = "best_tourism_model_v1.joblib"
