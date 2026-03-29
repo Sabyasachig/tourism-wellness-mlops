@@ -10,7 +10,7 @@ import os
 HF_USERNAME = os.getenv("HF_USERNAME", "sabyasachighosh")
 DATASET_REPO_ID = f"{HF_USERNAME}/tourism-wellness-data"
 REPO_TYPE = "dataset"
-DATA_FILE = "tourism_project/data/tourism.csv"
+DATA_FILE = "tourism.csv"
 
 # ── INITIALISE API ─────────────────────────────────────────────────────────────
 api = HfApi(token=os.getenv("HF_TOKEN"))
