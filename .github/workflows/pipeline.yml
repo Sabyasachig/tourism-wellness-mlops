@@ -8,6 +8,10 @@ on:
   push:
     branches:
       - main
+      - test-pipeline   # ← test branch triggers the full pipeline too
+  pull_request:
+    branches:
+      - main            # ← PR into main also triggers it
 
 jobs:
 
