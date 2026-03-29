@@ -9,7 +9,7 @@ import time
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
 HF_USERNAME = os.getenv("HF_USERNAME", "sabyasachighosh")
-SPACE_REPO  = f"{HF_USERNAME}/tourism-wellness-app"
+SPACE_REPO  = f"{HF_USERNAME}/tourism-wellness-predictor"
 HF_TOKEN    = os.getenv("HF_TOKEN")
 
 api = HfApi(token=HF_TOKEN)
