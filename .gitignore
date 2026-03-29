@@ -21,6 +21,10 @@ build/
 # ── Jupyter checkpoints ───────────────────────────────────────────────────────
 .ipynb_checkpoints/
 
+# ── Project-specific exclusions ──────────────────────────────────────────────
+instructions.md
+Learner_Template_Notebook_AML_and_MLOps_Project.ipynb
+
 # ── macOS metadata ───────────────────────────────────────────────────────────
 .DS_Store
 
