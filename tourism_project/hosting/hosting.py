@@ -29,10 +29,14 @@ except RepositoryNotFoundError:
     print(f"Created Hugging Face Space: {SPACE_REPO}")
 
 # ── UPLOAD DEPLOYMENT FOLDER ──────────────────────────────────────────────────
+# squash_history=True avoids 412 Precondition Failed on re-runs when
+# the Space already exists from a previous pipeline execution.
 api.upload_folder(
     folder_path="tourism_project/deployment",
     repo_id=SPACE_REPO,
     repo_type="space",
+    commit_message="Deploy tourism wellness app",
+    squash_history=True,
 )
 print(f"\nDeployment files uploaded to Space: {SPACE_REPO}")
 print(f"Your app will be live at: https://huggingface.co/spaces/{SPACE_REPO}")
