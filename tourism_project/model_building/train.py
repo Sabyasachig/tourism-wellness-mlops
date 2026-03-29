@@ -4,13 +4,11 @@ and uploads the winning model to a Hugging Face model repository.
 Triggered as the third job (train-model) in the GitHub Actions pipeline.
 """
 import os
-import shutil
 import pandas as pd
+import numpy as np
 import mlflow
 import mlflow.sklearn
 import joblib
-import warnings
-warnings.filterwarnings("ignore")
 
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
@@ -21,11 +19,14 @@ from sklearn.metrics import (
     accuracy_score, precision_score, recall_score,
     f1_score, roc_auc_score,
 )
-from huggingface_hub import HfApi, create_repo, hf_hub_download
+from huggingface_hub import HfApi, create_repo
 from huggingface_hub.utils import RepositoryNotFoundError
+from huggingface_hub import hf_hub_download
+import warnings
+warnings.filterwarnings("ignore")
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
-HF_USERNAME   = os.getenv("HF_USERNAME", "<YOUR_HF_USERNAME>")
+HF_USERNAME   = os.getenv("HF_USERNAME", "sabyasachighosh")
 DATASET_REPO  = f"{HF_USERNAME}/tourism-wellness-data"
 MODEL_REPO    = f"{HF_USERNAME}/tourism-wellness-model"
 HF_TOKEN      = os.getenv("HF_TOKEN")
@@ -45,6 +46,8 @@ for fname in ["X_train.csv", "X_test.csv", "y_train.csv", "y_test.csv"]:
         repo_id=DATASET_REPO, filename=fname,
         repo_type="dataset", token=HF_TOKEN,
     )
+    # Copy to working dir
+    import shutil
     shutil.copy(local_p, f"tourism_project/data/{fname}")
 
 X_train = pd.read_csv("tourism_project/data/X_train.csv")

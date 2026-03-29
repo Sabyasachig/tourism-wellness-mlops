@@ -22,7 +22,7 @@ except RepositoryNotFoundError:
     create_repo(
         repo_id=SPACE_REPO,
         repo_type="space",
-        space_sdk="docker",   # HF no longer accepts "streamlit"; Streamlit apps use "docker" SDK
+        space_sdk="docker",  # HF no longer accepts "streamlit"; Streamlit apps use "docker" SDK
         private=False,
         token=HF_TOKEN,
     )
