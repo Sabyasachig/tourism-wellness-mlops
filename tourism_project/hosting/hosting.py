@@ -8,7 +8,7 @@ from huggingface_hub.utils import RepositoryNotFoundError
 import os
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
-HF_USERNAME = os.getenv("HF_USERNAME", "<YOUR_HF_USERNAME>")
+HF_USERNAME = os.getenv("HF_USERNAME", "sabyasachighosh")
 SPACE_REPO  = f"{HF_USERNAME}/tourism-wellness-app"
 HF_TOKEN    = os.getenv("HF_TOKEN")
 
@@ -22,7 +22,7 @@ except RepositoryNotFoundError:
     create_repo(
         repo_id=SPACE_REPO,
         repo_type="space",
-        space_sdk="streamlit",
+        space_sdk="docker",   # HF no longer accepts "streamlit"; Streamlit apps use "docker" SDK
         private=False,
         token=HF_TOKEN,
     )
