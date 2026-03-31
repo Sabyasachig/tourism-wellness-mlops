@@ -1,5 +1,5 @@
-# Use a minimal Python 3.9 base image
-FROM python:3.9
+# Use Python 3.10 base image (matches CI pipeline)
+FROM python:3.10-slim
 
 # Set working directory inside the container
 WORKDIR /app
