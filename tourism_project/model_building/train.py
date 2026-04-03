@@ -24,6 +24,8 @@ from huggingface_hub.utils import RepositoryNotFoundError
 from huggingface_hub import hf_hub_download
 import warnings
 warnings.filterwarnings("ignore")
+import logging
+logging.getLogger("mlflow").setLevel(logging.ERROR)
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
 HF_USERNAME   = os.getenv("HF_USERNAME", "sabyasachighosh")
@@ -110,7 +112,7 @@ for exp in experiments:
 
         mlflow.log_params(gs.best_params_)
         mlflow.log_metrics(metrics)
-        mlflow.sklearn.log_model(fitted, artifact_path="model")
+        mlflow.sklearn.log_model(fitted, name="model")
 
         print(f"{exp['name']}: F1={metrics['f1']:.4f} | ROC-AUC={metrics['roc_auc']:.4f}")
 

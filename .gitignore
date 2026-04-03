@@ -23,6 +23,7 @@ build/
 
 # ── Project-specific exclusions ──────────────────────────────────────────────
 instructions.md
+improvement.md
 Learner_Template_Notebook_AML_and_MLOps_Project.ipynb
 
 # ── macOS metadata ───────────────────────────────────────────────────────────
@@ -39,3 +40,4 @@ mlartifacts/
 
 # ── Temporary cloned repo (created by notebook push-to-GitHub cell) ──────────
 tourism-wellness-mlops/
+tourism_project/data/tourism.csv
